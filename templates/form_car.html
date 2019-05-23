@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar - Novo Carro</title>
+</head>
+<body>
+    <h3>Adicionar Carro:</h3>
+        <form action="/add_car" method="post" enctype=multipart/form-data>
+            Modelo:<br>
+            <input type="text" name="modelo"><br>
+            Marca:<br>
+            <input type="text" name="marca"><br>
+            Ano:<br>
+            <input type="text" name="ano"><br>
+            Preço:<br>
+            <input type="text" name="preco"><br>
+            V.I.P:<br><br>
+            <input type="radio" name="y_or_n" value='S'>S
+            <input type="radio" name="y_or_n" value='N'>N<br><br>
+            Imagem:<br>
+            <input type="file" name="img"><br><br>
+            <input type="submit" value="ADD">
+        </form>
+
+</body>
+</html>

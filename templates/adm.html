@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    table {
+        width: 50%;
+        height: 50%;
+        text-align: center;
+        margin:auto;
+        table-layout: fixed;
+    }
+    </style>
+
+</head>
+<body>
+<h1>Bem vindo senhor administrador!</h1>
+    <div>
+        <table border="1" title="Funcionarios">
+            <caption><h3>Funcionarios</h3></caption>
+            <tr>
+                <td>Id</td>
+                <td>Nome</td>
+                <td>Senha</td>
+            </tr>
+            {% for linha in lista_fun %}
+                <tr>
+                    <td>{{ linha[0] }}</td>
+                    <td>{{ linha[1] }}</td>
+                    <td>{{ linha[2] }}</td>
+                    <td><a href="/deletar_func/ {{ linha[0] }}">Deletar</a></td>
+                    <td><a href="/form_alter_func/ {{ linha[0] }}">Alterar</a></td>
+                </tr>
+            {% endfor %}
+                <tr>
+                    <td class="butau"><a href="/form_func">ADD</a></td>
+                </tr>
+
+        </table>
+    </div>
+    <div>
+        <table border="1" title="Anuncios">
+            <caption><h3>Anuncios Abertos</h3></caption>
+            <tr>
+                <td>Id</td>
+                <td>Modelo</td>
+                <td>Marca</td>
+                <td>Ano</td>
+                <td>Reservado</td>
+                <td>Preço</td>
+                <td>Vip</td>
+                <td>Imagem</td>
+
+            </tr>
+            {% for linha in lista_car %}
+                <tr>
+                    <td>{{ linha[0] }}</td>
+                    <td>{{ linha[1] }}</td>
+                    <td>{{ linha[2] }}</td>
+                    <td>{{ linha[3] }}</td>
+                    <td>{{ linha[4] }}</td>
+                    <td>{{ linha[5] }}</td>
+                    <td><a href="/add_vip/{{ linha[0] }}/{{ linha[6] }}">{{ linha[6] }}</a></td>
+                    <td><img src="{{ url_for('static', filename='{{ linha[7] }}') }}"></td>
+                    <td><a href="/deletar_anun/{{ linha[0] }}">Deletar</a></td>
+                    <td><a href="#">Alterar</a></td>
+                </tr>
+            {% endfor %}
+                <tr>
+                    <td><a href="/form_car">ADD</a></td>
+                </tr>
+        </table>
+
+    </div>
+
+</body>
+</html>
